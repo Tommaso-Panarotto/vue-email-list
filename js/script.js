@@ -17,9 +17,16 @@ createApp({
                     console.table(this.emailList);
                 }
                 );
+        },
+        getTotRandomEmail(tot) {
+            let start = 0;
+            while (start < tot) {
+                this.getRandomEmail();
+                start += 1;
+            }
         }
     },
     mounted() {
-        this.getRandomEmail();
+        this.getTotRandomEmail(10)
     }
 }).mount('#app')
