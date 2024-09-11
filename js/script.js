@@ -12,17 +12,13 @@ createApp({
         getRandomEmail() {
             axios.get(this.apiUrl)
                 .then((response) => {
-                    console.log(response.data);
                     this.emailList.push(response.data.response);
-                    console.table(this.emailList);
                 }
                 );
         },
         getTotRandomEmail(tot) {
-            let start = 0;
-            while (start < tot) {
+            for (let i = 0; i < tot; i++) {
                 this.getRandomEmail();
-                start += 1;
             }
         }
     },
