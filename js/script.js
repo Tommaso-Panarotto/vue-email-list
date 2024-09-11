@@ -13,10 +13,11 @@ createApp({
         getRandomEmail() {
             axios.get(this.apiUrl)
                 .then((response) => {
-                    if (this.emailList.includes(response.data.response)) {
-                        this.doubleEmail += 1;
-                    } else {
+                    if (!this.emailList.includes(response.data.response)) {
                         this.emailList.push(response.data.response);
+                    } else {
+                        this.doubleEmail += 1;
+                        this.getRandomEmail();
                     }
                 }
                 );
