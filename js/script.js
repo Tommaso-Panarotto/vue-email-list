@@ -13,6 +13,8 @@ createApp({
             axios.get(this.apiUrl)
                 .then((response) => {
                     console.log(response.data);
+                    this.emailList.push(response.data.response);
+                    console.table(this.emailList);
                 }
                 );
         }
