@@ -28,7 +28,14 @@
     <!--VUEJS-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <div id="app"></div>
+    <div id="app">
+        <div class="container">
+            <h1>Email List</h1>
+            <ul>
+                <li v-for="email in emailList">{{email}}</li>
+            </ul>
+        </div>
+    </div>
 
 
     <!--JS-->
